@@ -97,7 +97,7 @@ function align_letters(width: number, height: number) {
 function valid_point(p:Pt){
   var x = p.x
   var y = p.y
-  const point = [p.x, p.y]
+  const point = [x, y]
   for(var shape of good_letters){
     if(pointInPolygon(point, shape)){
       for(var bad_shape of bad_letters){
