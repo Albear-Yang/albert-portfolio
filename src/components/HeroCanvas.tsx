@@ -1,10 +1,6 @@
 // src/hero/HeroCanvas.tsx
 import React, { useEffect, useRef } from "react";
-import { poissonDisk, easeInOutCubic, dist2 } from "./utils";
-import type { Pt } from "./utils";
-import pointInPolygon from "point-in-polygon";
-import { good_letters } from "./utils"; // Make sure good_letters is exported
-
+import { poissonDisk, easeInOutCubic } from "./utils";
 import { drawFrame } from "./draw";
 import { createColonizer, type Node, type SavedTree } from "./colonizer";
 
@@ -31,14 +27,9 @@ export default function HeroCanvas({ show, onFinish, shrunk }: Props) {
 
   const colonizerRef = useRef<ReturnType<typeof createColonizer> | null>(null);
 
-  var W = window.innerWidth;
   var H = window.innerHeight;
   var POISSON_RADIUS = Math.floor(H/150);
   var POISSON_K = 140;
-  var ATTRACT_DIST = Math.floor(H/80);
-  var KILL_DIST = Math.floor(H/300);
-  var SEGMENT_LEN = Math.floor(H/280);
-  var MAX_ITER = 1000;
   var CLICK_TOL = 12;
   var SHRINK_DURATION = 800; // ms, should match CSS transition duration
 
@@ -140,7 +131,7 @@ export default function HeroCanvas({ show, onFinish, shrunk }: Props) {
       pointsRef,
       inProgressRef: inProgressNodesRef,
       savedTreesRef,
-      onDone: (tree) => {
+      onDone: () => {
         // keep onFinish behavior (you can expand this later)
         onFinish();
       },

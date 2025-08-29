@@ -31,8 +31,6 @@ var avoid_E = [[297.808, 43.513], [298.03, 48.289], [296.061, 52.516], [293.34, 
 var good_letters = [letter_A, letter_B, letter_C, letter_D, letter_E, letter_F, letter_G, letter_H, letter_I, letter_J]
 var bad_letters = [avoid_A, avoid_B, avoid_C, avoid_D, avoid_E]
 
-var letters_height = 42
-var letters_width = 323
 // keep one immutable copy so transforms aren't cumulative
 const _good_letters_orig = JSON.parse(JSON.stringify(good_letters)) as number[][][];
 const _bad_letters_orig = JSON.parse(JSON.stringify(bad_letters)) as number[][][];

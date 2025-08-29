@@ -6,7 +6,7 @@ import fourierSketch from "../sketches/fourier";
 import { initNNPath } from "../sketches/initNNPath";
 import P5Wrapper from "./P5Wrapper";
 import podgeSketch from "../sketches/automata";
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 
 export default function MainContent() {
