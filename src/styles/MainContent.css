@@ -12,9 +12,6 @@
   padding: 2px;
   margin: 0 0 2em 0;
 }
-.main-content p {
-  margin: 0 0 20em 0;
-}
 .comic-layout {
   display: flex;
   flex-direction: column;
