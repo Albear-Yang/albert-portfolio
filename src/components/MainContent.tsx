@@ -14,7 +14,6 @@ export default function MainContent() {
     initNNPath();
   }, []);
 
-  // Add state for drawmode
   const [drawMode, setDrawMode] = useState(false);
 
   // Button handler: toggles drawmode in React and p5 sketch
