@@ -86,6 +86,9 @@ export default function MainContent() {
             <h2>
               eikonal contours
             </h2>
+            <p>
+              fast marching method for the eikonal equation then marching squares to grab the contours.
+            </p>
           </Box>
           <Box className="panel medium">
             <P5Wrapper sketch={fourierSketch} />
@@ -94,6 +97,11 @@ export default function MainContent() {
             <h2>
               fourier transform
             </h2>
+            <p>
+              fourier transform on a squence of points to draw a series of rotating epicycles.
+
+              create your own sequence of points by clicking the draw button and dragging click across the canvas
+            </p>
             <button
               onClick={handleToggleDrawMode}
               style={{
@@ -116,6 +124,9 @@ export default function MainContent() {
             <h2>
             cellular automata Belousov Zhabotinsky reaction
           </h2>
+          <p>
+            randomly generated simulation of a belousov zhabotinsky reaction
+          </p>
           </Box>
           <Box className="panel large">
             <P5Wrapper sketch={podgeSketch} />
@@ -124,6 +135,9 @@ export default function MainContent() {
             <h2>
             graphing my face w/ desmos and python
           </h2>
+          <p>
+            graphed my face w/ python and desmos using bezier equations
+          </p>
           </Box>
           <Box className="panel large">
           <iframe
