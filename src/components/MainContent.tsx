@@ -44,7 +44,7 @@ export default function MainContent() {
           <Box className="panel medium">
             <h1>contact me:</h1>
             <h2>email: albert.yang727@gmail.com</h2>
-            <h2>github: 
+            <h2>github: &nbsp;
               <a
                 href="https://github.com/Albear-Yang?tab=followers"
                 target="_blank"
@@ -53,7 +53,7 @@ export default function MainContent() {
                  albear-yang
               </a>
             </h2>
-            <h2>linkedin: 
+            <h2>linkedin: &nbsp;
               <a
                 href="https://www.linkedin.com/in/albert-yang-128776241/"
                 target="_blank"
