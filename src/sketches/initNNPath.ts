@@ -180,28 +180,34 @@ export function initNNPath(): Pt[] {
   }
 
   // nearest neighbour search (ported from your code)
-  let allPaths: any[] = [];
+  let allPaths: [Point[], number][] = [];
 
-  function nn(pathlistLocal: any[], past: any[]) {
+  function nn(pathlistLocal: DrawPath[], past: any[]) {
     let newPast = past.slice();
+
     if (pathlistLocal.length === 1) {
-      const WHAT = givePath(newPast)[0];
-      const length = givePath(newPast)[1];
+      const [WHAT, length] = givePath(newPast);
       const WHATconcat = WHAT.concat(pathlistLocal[0].p);
-      const arr = [WHATconcat, length];
+      const arr: [Point[], number] = [WHATconcat, length];
       allPaths.push(arr);
     } else {
       const first = pathlistLocal[0];
       pathlistLocal.shift();
+
       const nearestRes = nearest(first, pathlistLocal);
       const nextPath = nearestRes[0];
       const nextPathPos = nearestRes[1];
+
       newPast.push(nextPath);
+
       pathlistLocal.unshift(pathlistLocal[nextPathPos]);
       pathlistLocal = remove(pathlistLocal, nextPathPos + 1);
+
       nn(pathlistLocal, newPast);
     }
   }
+
+
 
   function remove(list: any[], elemPos: number) {
     const output: any[] = [];
@@ -251,17 +257,17 @@ export function initNNPath(): Pt[] {
     return mostEfficientPath;
   }
 
-  function givePath(past: any[]) {
+  function givePath(past: any[]): [Point[], number] {
     let total: Point[] = [];
     let length = 0;
     for (let x = 0; x < past.length; x++) {
       length += past[x][0];
       total = total.concat(past[x][2]);
-      total = total.concat(past[x][2].slice(past[x][1].length, past[x][2].length).reverse());
+      total = total.concat(past[x][2].slice(past[x][1].length).reverse());
       total = total.concat(past[x][3].reverse());
     }
     return [total, length];
-  }
+}
 
   // run the pipeline
   sortData();
